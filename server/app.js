@@ -27,6 +27,7 @@ app.get("/api", (req, res) => {
   vndb
     .query(`get vn basic (title ~ "${req.query.search}")`)
     .then((res1) => {
+      console.log(res1);
       res.set({ "access-control-allow-origin": "*" });
       res.status(200).send(res1);
     })

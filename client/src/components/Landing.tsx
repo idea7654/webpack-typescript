@@ -32,12 +32,18 @@ const Landing = ({ onPress }: Props) => {
           });
         });
       }
-      //onPress();
+      onPress();
     }
   }
   useEffect(() => {
     InputRef.current.focus();
   }, []);
+
+  // useEffect(() => {
+  //   if (Result.length === 1) {
+
+  //   }
+  // }, [Result]);
   return (
     <div>
       <div className="w-1/2 mx-auto">
@@ -84,6 +90,7 @@ const Landing = ({ onPress }: Props) => {
                   return <CommandList data={data} />;
                 })
               : ""}
+            {Result.length === 1 ? <p>발매날짜: {Result[0].released}</p> : ""}
           </div>
         </div>
       </div>
